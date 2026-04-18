@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Start Animations
-        // spawnButterflies();
         spawnLeaves();
         spawnSparkles();
         spawnSakura();
@@ -147,35 +146,6 @@ function handleScrollAnimations() {
 
 function closeLightbox() {
     document.getElementById('lightbox').classList.add('hidden');
-}
-
-// Butterfly System
-function spawnButterflies() {
-    const container = document.getElementById('butterfly-container');
-    const colors = ['#D4AF37', '#FDFBF7', '#EEDC82'];
-    
-    setInterval(() => {
-        const butterfly = document.createElement('div');
-        butterfly.className = 'butterfly';
-        
-        // Random position and timing
-        const startX = Math.random() * 100;
-        const duration = 10 + Math.random() * 10;
-        const delay = Math.random() * 5;
-        const size = 20 + Math.random() * 30;
-        
-        butterfly.style.left = startX + '%';
-        butterfly.style.width = size + 'px';
-        butterfly.style.height = size + 'px';
-        butterfly.style.animation = `fly ${duration}s linear ${delay}s infinite`;
-        
-        container.appendChild(butterfly);
-        
-        // Cleanup
-        setTimeout(() => {
-            butterfly.remove();
-        }, (duration + delay) * 1000);
-    }, 2000);
 }
 
 // Sakura System

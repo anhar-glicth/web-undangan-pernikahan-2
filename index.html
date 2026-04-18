@@ -20,9 +20,24 @@
 </head>
 <body>
 
-    <div id="butterfly-container" class="butterfly-container"></div>
     <div id="leaf-container"></div>
     <div id="sakura-container" class="sakura-container"></div>
+    <div id="corner-ornaments">
+        <div class="corner-ornament top-left"><img src="img/butterfly.gif" alt="Butterfly"></div>
+        <div class="corner-ornament top-right"><img src="img/butterfly.gif" alt="Butterfly"></div>
+        <div class="corner-ornament bottom-left"><img src="img/butterfly.gif" alt="Butterfly"></div>
+        <div class="corner-ornament bottom-right"><img src="img/butterfly.gif" alt="Butterfly"></div>
+    </div>
+    
+    <!-- SVG Filter to Remove White Background -->
+    <svg style="visibility: hidden; position: absolute;" width="0" height="0">
+      <filter id="remove-white">
+        <feColorMatrix type="matrix" values="1 0 0 0 0
+                                             0 1 0 0 0
+                                             0 0 1 0 0
+                                             -1.5 -1.5 -1.5 4 0" />
+      </filter>
+    </svg>
     <div id="toast" class="toast hidden">Pesan Berhasil Disalin!</div>
 
     <!-- Floating Navbar -->
@@ -71,8 +86,8 @@
     <main id="main-invitation" class="hidden">
         
         <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="hero-bg" style="background-image: url('img/bg1 (3).jpg')"></div>
+        <section id="hero" class="hero animate-on-scroll">
+            <div class="hero-bg animate-bg" style="background-image: url('img/bg1 (3).jpg')"></div>
             <div class="hero-content">
                 <p class="animate-on-scroll fade-up">THE WEDDING OF</p>
                 <h2 class="couple-title animate-on-scroll zoom-in">Romeo & Juliet</h2>
@@ -122,8 +137,8 @@
         </section>
 
         <!-- Story Section -->
-        <section id="story" class="story-section section-with-bg">
-            <div class="section-bg" style="background-image: url('img/bg1 (1).jpg')"></div>
+        <section id="story" class="story-section section-with-bg animate-on-scroll">
+            <div class="section-bg animate-bg" style="background-image: url('img/bg1 (1).jpg')"></div>
             <div class="container">
                 <div class="section-header">
                     <h2 class="animate-on-scroll">Kisah Cinta</h2>
@@ -148,8 +163,8 @@
         </section>
 
         <!-- Event Section -->
-        <section id="acara" class="event-section">
-            <div class="event-bg" style="background-image: url('img/bg1 (3).jpg')"></div>
+        <section id="acara" class="event-section animate-on-scroll">
+            <div class="event-bg animate-bg" style="background-image: url('img/bg1 (3).jpg')"></div>
             <div class="container">
                 <div class="blooming-flower top-right animate-on-scroll"></div>
                 <div class="event-row">
@@ -184,8 +199,8 @@
         </section>
 
         <!-- Gallery Section -->
-        <section id="gallery" class="gallery-section section-with-bg gallery-full-bright">
-            <div class="section-bg" style="background-image: url('img/bg1 (4).jpg')"></div>
+        <section id="gallery" class="gallery-section section-with-bg gallery-full-bright animate-on-scroll">
+            <div class="section-bg animate-bg" style="background-image: url('img/bg1 (4).jpg')"></div>
             <div class="container">
                 <div class="section-header">
                     <h2 class="animate-on-scroll">Gallery</h2>
@@ -219,8 +234,8 @@
         </section>
 
         <!-- Digital Gift Section -->
-        <section id="gift" class="gift-section section-with-bg">
-            <div class="section-bg" style="background-image: url('img/bg1 (2).jpg')"></div>
+        <section id="gift" class="gift-section section-with-bg animate-on-scroll">
+            <div class="section-bg animate-bg" style="background-image: url('img/bg1 (2).jpg')"></div>
             <div class="blooming-flower bottom-left animate-on-scroll"></div>
             <div class="container">
                 <div class="section-header">
@@ -239,8 +254,8 @@
         </section>
 
         <!-- RSVP / Wishes Section -->
-        <section id="rsvp" class="rsvp-section section-with-bg">
-            <div class="section-bg" style="background-image: url('img/bg1 (3).jpg')"></div>
+        <section id="rsvp" class="rsvp-section section-with-bg animate-on-scroll">
+            <div class="section-bg animate-bg" style="background-image: url('img/bg1 (3).jpg')"></div>
             <div class="container">
                 <div class="rsvp-content">
                     <div class="rsvp-form-container animate-on-scroll">
@@ -273,8 +288,8 @@
         </section>
 
         <!-- Footer -->
-        <footer class="footer section-with-bg">
-            <div class="section-bg" style="background-image: url('img/bg1 (1).jpg')"></div>
+        <footer class="footer section-with-bg animate-on-scroll">
+            <div class="section-bg animate-bg" style="background-image: url('img/bg1 (1).jpg')"></div>
             <div class="container animate-on-scroll">
                 <img src="img/nikah.png" alt="Wedding Logo" style="width: 80px; margin-bottom: 20px;">
                 <p>Merupakan suatu kehormatan dan kebahagiaan bagi kami <br> apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>

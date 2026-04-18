@@ -323,41 +323,6 @@ h1, h2, h3, .couple-title {
     overflow: hidden;
 }
 
-/* --- BUTTERFLIES --- */
-.butterfly-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1000;
-    overflow: hidden;
-}
-
-.butterfly {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background: url('img/butterfly.png') no-repeat center center;
-    background-size: contain;
-    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
-    opacity: 0;
-}
-
-@keyframes fly {
-    0% {
-        transform: translate(-10%, 110%) rotate(0deg);
-        opacity: 0;
-    }
-    10% { opacity: 0.8; }
-    90% { opacity: 0.8; }
-    100% {
-        transform: translate(110%, -10%) rotate(360deg);
-        opacity: 0;
-    }
-}
-
 .hero-bg {
     position: absolute;
     top: 0;
@@ -1020,6 +985,75 @@ input, select, textarea {
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 .delay-5 { transition-delay: 0.5s; }
+
+/* --- BACKGROUND ANIMATION --- */
+.animate-bg {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: all 2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.revealed .animate-bg {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-full-bright.revealed .section-bg {
+    filter: brightness(1) !important;
+}
+
+/* --- CORNER ORNAMENTS --- */
+.corner-ornament {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    z-index: 10001;
+    pointer-events: none;
+    opacity: 0.9;
+}
+
+.corner-ornament img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: url(#remove-white) brightness(1.1) contrast(1.1); /* Aggressively removes white background */
+    mix-blend-mode: multiply; /* Secondary backup for blending */
+}
+
+.top-left { top: -30px; left: -30px; transform: rotate(15deg); }
+.top-right { top: -30px; right: -30px; transform: scaleX(-1) rotate(15deg); }
+.bottom-left { bottom: -30px; left: -30px; transform: scaleY(-1) rotate(-15deg); }
+.bottom-right { bottom: -30px; right: -30px; transform: scale(-1) rotate(-15deg); }
+
+/* Side-to-side movement animations */
+.top-left { animation: float-tl-side 10s ease-in-out infinite; }
+.top-right { animation: float-tr-side 12s ease-in-out infinite; }
+.bottom-left { animation: float-bl-side 11s ease-in-out infinite; }
+.bottom-right { animation: float-br-side 13s ease-in-out infinite; }
+
+@keyframes float-tl-side {
+    0%, 100% { transform: translate(0, 0) rotate(15deg); }
+    50% { transform: translate(40px, 10px) rotate(25deg); }
+}
+@keyframes float-tr-side {
+    0%, 100% { transform: scaleX(-1) translate(0, 0) rotate(15deg); }
+    50% { transform: scaleX(-1) translate(40px, 10px) rotate(25deg); }
+}
+@keyframes float-bl-side {
+    0%, 100% { transform: scaleY(-1) translate(0, 0) rotate(-15deg); }
+    50% { transform: scaleY(-1) translate(40px, -10px) rotate(-25deg); }
+}
+@keyframes float-br-side {
+    0%, 100% { transform: scale(-1) translate(0, 0) rotate(-15deg); }
+    50% { transform: scale(-1) translate(40px, -10px) rotate(-25deg); }
+}
+
+@media (max-width: 768px) {
+    .corner-ornament {
+        width: 100px;
+        height: 100px;
+    }
+}
 
 /* --- BLOOMING FLOWER EFFECT --- */
 .blooming-flower {
